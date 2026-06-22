@@ -1,0 +1,158 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: #000;
+    color: white;
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+/* --- PANTALLA INICIAL (SOBRE) --- */
+#pantalla-inicial {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 1s ease;
+}
+
+#sobre {
+    width: 300px;
+    cursor: pointer;
+}
+
+/* --- CONTENEDOR PRINCIPAL DE LA INVITACIÓN --- */
+#invitacion {
+    display: none;
+    min-height: 100vh;
+    background: #ffffff;
+    text-align: center;
+    color: #333333; /* Forzamos a que todo dentro de la invitación use letra oscura legible */
+}
+
+#portada {
+    width: 100%;
+    height: auto;
+    max-width: 430px;
+    display: block;
+    margin: auto;
+}
+
+/* --- LLUVIA DE PÉTALOS --- */
+.petalo {
+    position: fixed;
+    top: -50px;
+    pointer-events: none;
+    z-index: 999;
+    animation: caer linear forwards;
+}
+
+/* --- CONTADOR --- */
+#contador {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+#contador h2 {
+    color: #6F0303;
+    margin-bottom: 20px;
+}
+
+.tiempo {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.tiempo div {
+    background: #6F0303;
+    color: white;
+    padding: 15px;
+    border-radius: 15px;
+    min-width: 80px;
+    border: 2px solid #0a0a00;
+}
+#contador .tiempo div p {
+    color: #ffffff !important;
+    margin: 5px 0 0 0;
+    font-size: 14px;
+}
+.tiempo span {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+/* --- ICONOS GENERALES --- */
+.icono {
+    width: 100px;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+/* --- SECCIONES DE TEXTO E INVITADOS (TODAS IGUALES) --- */
+#padres,
+#agradecimiento,
+#ceremonia,
+#recepcion,
+#vals,
+#gracias-final {
+    text-align: center;
+    padding: 40px 20px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+/* Estilo unificado para los títulos grandes (Ariel y Aniela, Agradecimiento, etc.) */
+#invitacion h2 {
+    font-size: 28px;
+    color: #000000; /* Letras totalmente negras y visibles */
+    margin-bottom: 15px;
+}
+
+/* Estilo unificado para los párrafos informativos (Mismo tamaño para todos) */
+#invitacion p {
+    font-size: 20px; 
+    line-height: 1.6;
+    color: #333333;
+    margin: 0;
+}
+
+/* --- FONDO ESPECIAL CON LA FLOR EN LA SECCIÓN PADRES --- */
+#padres {
+    background-image: url('img/image_55c969.png'); /* Asegúrate de que el nombre coincida en tu carpeta */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+/* --- BOTONES DE UBICACIÓN Y MÚSICA --- */
+.boton {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 12px 25px;
+    background: #6D214F;
+    color: white !important; /* Forzamos a que el texto del botón sea blanco */
+    text-decoration: none;
+    border-radius: 30px;
+    border: 2px solid #F5E6A7;
+    font-weight: bold;
+    transition: transform 0.2s ease;
+}
+
+.boton:hover {
+    transform: scale(1.05); /* Efecto visual sutil cuando pasas el mouse por encima */
+}
+
+/* --- ANIMACIÓN KEYFRAMES --- */
+@keyframes caer {
+    0% {
+        transform: translateY(-50px) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
